@@ -3,7 +3,10 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
+	"strconv"
+	"strings"
 )
 
 func main() {
@@ -49,12 +52,30 @@ func main() {
 	// }
 
 	// fmt.Println(result)
-
+	///I/O
 	test := bufio.NewReader(os.Stdin)
 
 	fmt.Println("Masukkan Teks : ")
 
 	value, _ := test.ReadString('\n')
-	fmt.Println("Hallo  "+value, a)
+	// fmt.Printf("Output %q", value)
+	str := strings.Replace(value, "\r\n", "", -1)
+	fmt.Println(str)
+
+	conv, err := strconv.Atoi(str)
+	fmt.Println(conv)
+
+	if err != nil {
+		log.Fatal(err)
+
+	}
+	if conv >= 1 && conv <= 10 {
+
+		fmt.Println("Angka " + strconv.Itoa(conv) + " Sudah Masuk Kedalam Range")
+
+	} else {
+		fmt.Println("Angka " + strconv.Itoa(conv) + " Tidak Sesuai Range")
+
+	}
 
 }
