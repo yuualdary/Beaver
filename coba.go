@@ -55,6 +55,6 @@ func main() {
 	fmt.Println("Masukkan Teks : ")
 
 	value, _ := test.ReadString('\n')
-	fmt.Println("Hallo  " + value)
+	fmt.Println("Hallo  "+value, a)
 
 }
